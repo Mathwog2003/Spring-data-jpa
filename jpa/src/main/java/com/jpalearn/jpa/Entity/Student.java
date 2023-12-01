@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "studentDetails",
+@Table(name = "studentDetail",
         uniqueConstraints = @UniqueConstraint(
                 name = "emailId_unique",
                 columnNames = "email_address"
@@ -34,7 +34,9 @@ public class Student {
 
     @Column(name = "email_address",nullable = false)
     private String mailId;
-    private String guardianName;
-    private String GuardianMailId;
-    private String GuardianMobile;
+
+    @Embedded
+    private Guardian guardian;
+
+
 }
