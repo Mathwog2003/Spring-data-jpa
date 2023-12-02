@@ -55,4 +55,11 @@ class StudentRepositaryTest {
         System.out.print("hiiii" +studentList);
     }
 
+    @Testc
+    public void printfindByFirstName(){
+        List<Student> student = studentRepositary.findByFirstName("gowtham");
+        System.out.println(student);
+
+    }
+
 }
