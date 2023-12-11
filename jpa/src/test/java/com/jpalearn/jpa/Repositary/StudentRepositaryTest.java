@@ -34,14 +34,14 @@ class StudentRepositaryTest {
     public void saveStudentWithGuardian()
     {
         Guardian guardian = Guardian.builder()
-                .name("uma")
-                .email("guardean@gmail.com")
+                .name("u")
+                .email("guaean@gmail.com")
                 .mobile("93939393939")
                 .build();
         Student student = Student.builder()
-                .firstName("gow")
+                .firstName("g")
                 .lastName("selva")
-                .mailId("gowtham3434@gmail.com")
+                .mailId("gowtm34@gmail.com")
                 .guardian(guardian)
                 .build();
 
@@ -64,6 +64,20 @@ class StudentRepositaryTest {
     @Test
     public void printfindByFirstNameContaining(){
         List<Student> student = studentRepositary.findByFirstNameContaining("go");
+        System.out.println(student);
+    }
+
+    @Test
+    public void printfindByGaurdiaName()
+    {
+        List<Student> student = studentRepositary.findByGuardianName("uma");
+        System.out.println(student);
+    }
+
+    @Test
+    public void PrintStudentByFirstNameandLastname()
+    {
+        List<Student> student = studentRepositary.findByFirstNameAndLastName("g","selva");
         System.out.println(student);
     }
 
