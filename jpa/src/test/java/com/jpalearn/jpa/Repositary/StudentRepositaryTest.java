@@ -81,4 +81,11 @@ class StudentRepositaryTest {
         System.out.println(student);
     }
 
+    @Test
+    public void getStudentByMailIdBYQuery()
+    {
+       Student s=  studentRepositary.getStudentEmailQuery("gowtham3434@gmail.com");
+       System.out.println(s);
+
+    }
 }

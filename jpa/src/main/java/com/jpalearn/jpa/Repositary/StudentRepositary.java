@@ -2,13 +2,18 @@ package com.jpalearn.jpa.Repositary;
 
 import com.jpalearn.jpa.Entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
 public interface StudentRepositary extends JpaRepository<Student,Long>{
 
-    public List<Student> findByFirstName(String firstName);
-    public List<Student> findByFirstNameContaining(String name);
-    public List<Student> findByGuardianName(String guardianName);
-    public List<Student> findByFirstNameAndLastName(String firstName, String LastName);
+     List<Student> findByFirstName(String firstName);
+     List<Student> findByFirstNameContaining(String name);
+     List<Student> findByGuardianName(String guardianName);
+     List<Student> findByFirstNameAndLastName(String firstName, String LastName);
+     @Query("select s from Student s where s.mailId = ?1")
+     Student getStudentEmailQuery(String email);
 }
+
+
